@@ -11,3 +11,5 @@ It contains functions for preparing the initial data, summarising area-level inf
 selecting a bootstrap sample, obtaining predictions of $k$-NN model, estimating domain totals with the MC estimator, 
 preparing data for the FH model, and obtaining final EBLUPs of areas.
 The purpose of decomposing the code is to modularize the whole process.
+
+Due to data sensitivity and confidentiality concerns, the datasets are not provided.
