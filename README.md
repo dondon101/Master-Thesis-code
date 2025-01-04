@@ -1,4 +1,4 @@
-# Master-Thesis-code
+# Master Thesis code
 The repository is for publishing the master thesis program code written in R language.
 
 The main code used to produce the results presented in the Master Thesis is in the `main_code.R` file.
