@@ -395,22 +395,12 @@ compare_plot <- function(comparison_df, name_estimator = NULL, title_text = NULL
   p3 <- ggplot(data = arrange(comparison_df[, 4:5], Direct_CV)) +
     geom_point(aes(x = 1:nrow(comparison_df), y = Direct_CV, color = "Direct"), cex = 2) + 
     
-    # geom_rect(ymin = 0, ymax = 0.05, xmin = -Inf, xmax = Inf, fill = "green", alpha = 0.005) +
-    # geom_rect(ymin = 0.05, ymax = 1/6, xmin = -Inf, xmax = Inf, fill = "orange", alpha = 0.005) +
-    # geom_rect(ymin = 0.16, ymax = 1/3, xmin = -Inf, xmax = Inf, fill = "red", alpha = 0.005) +
-    
     geom_hline(yintercept = 1/3, linetype = "dashed", col = "orange") + 
-    # annotate("text", x = 55, y = 1/3, label = "cv = 33,3 %", vjust = -0.5) +
     annotate("text", x = Inf, y = 1/3, label = "cv = 33,3 %", hjust = -0.2, size = 4) +
     
     geom_hline(yintercept = 1/6, linetype = "dashed", col = "green") + 
-    # annotate("text", x = 55, y = 1/6, label = "cv = 16,5 %", vjust = -0.5) +
     annotate("text", x = Inf, y = 1/6, label = "cv = 16,5 %", hjust = -0.2, size = 4) +
-    
-    # geom_hline(yintercept = 0.05, linetype = "dashed", col = "green") + 
-    # # annotate("text", x = 55, y = 0.05, label = "cv = 5 %", vjust = -0.5) +
-    # annotate("text", x = Inf, y = 0.05, label = "cv = 5 %", hjust = -0.2, size = 4) +
-    
+     
     geom_point(aes(x = 1:nrow(comparison_df), y = !!sym(paste0(name_estimator, "_CV")), color = name_estimator), cex = 2) + 
     scale_color_manual(name = "Method", values = c(coLors[1], coLors[2])) + 
     ylim(0, 1) +
