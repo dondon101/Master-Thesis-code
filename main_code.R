@@ -197,7 +197,6 @@ for(quarter_id in 1:14){
   
   # fix the quarter
   fixed_period <- quarter_id
-  # fixed_period <- 14
 
   # prepare initial data for a single period: population, p_sample, np_sample, aux. data
   init_data_results <- prepare_InitData(period = fixed_period,
@@ -245,8 +244,6 @@ for(quarter_id in 1:14){
                                    sav_kodai = sav_kodas,
                                    verbose = TRUE
                                    )
-  
-  
   
   
   #       BOOTSTRAP
@@ -334,13 +331,10 @@ for(quarter_id in 1:14){
                                        verbose = TRUE,
                                        plot_diagnostics = TRUE,
                                        excluded_areas = area_data$excluded_areas$scrapped
-                                       # excluded_areas = NULL
                                        )
   
   save_eblups_hajek[[fixed_period]] <- estimator_FH
   
-
-  # if(fixed_period %in% 12:13) out_of_sample_Q <- c(42, 49)
   estimator_FH_boot <- get_estimator_EBPLUP(data = data_smoothed,
                                             period = init_data_results$period,
                                             do_MC = TRUE,
@@ -349,9 +343,7 @@ for(quarter_id in 1:14){
                                             verbose = TRUE,
                                             plot_diagnostics = TRUE,
                                             excluded_areas = area_data$excluded_areas$scrapped
-                                            # excluded_areas = NULL
                                             )
-  
   
   save_eblups_MC[[fixed_period]] <- estimator_FH_boot
   
