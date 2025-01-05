@@ -115,12 +115,7 @@ week_of_quarter <- data.frame(quarter_id = quarter_ids, week_number = week_numbe
 week_of_quarter$week_id <- paste("week", substring(week_of_quarter$quarter_id, 1, 4), 
                                  week_of_quarter$week_number, sep = "_")
 
-
-
-N_tyr_0 <- subset(tyr_duom, select=c("sav_kodas", quarter_ids))  # ??????????
-
-
-
+N_tyr_0 <- subset(tyr_duom, select=c("sav_kodas", quarter_ids))  
 
 # ******************************************************************************
 # Create lists of populations and samples
